@@ -4,26 +4,20 @@
 #include <stdio.h>
 using namespace std;
 
-/**
- * Struct node contains a data that node store and a pointer to the next node
- */
+/* Struct node contains a data that node store and a pointer to the next node */
 typedef struct node
 {
     int data;
     struct node *next;
 } node;
 
-/**
- * Linked list object create only the head for that linked list to point to the node
- */
+/* Linked list object create only the head for that linked list to point to the node */
 typedef struct linked_list
 {
     struct node *head;
 } linked_list;
 
-/**
- * Function create a new node in the heap with any data
- */
+/* Function create a new node in the heap with any data */
 node *new_node(int data)
 {
     node *z; // declare a pointer
@@ -35,9 +29,7 @@ node *new_node(int data)
     return z;
 }
 
-/**
- * Function create a new linked list in the heap by create a first node then point the head of the linked list to the node 
- */
+/* Function create a new linked list in the heap by create a first node then point the head of the linked list to the node */
 linked_list *new_linked_list(int data)
 {
     node *a = new_node(data);
@@ -47,10 +39,8 @@ linked_list *new_linked_list(int data)
     return L;
 }
 
-/**
- * Function go through all the node in the linked list then print out all the data
- * If the node->next == NULL then stop
- */
+/* Function go through all the node in the linked list then print out all the data
+ * If the node->next == NULL then stop */
 void traverse(linked_list *L)
 {
     // Create a temp node point to the head that allow us to traverse
@@ -65,20 +55,16 @@ void traverse(linked_list *L)
     printf("\n");
 }
 
-/**
- * Function add the node at the beginning of the linked list
+/* Function add the node at the beginning of the linked list
  * Set new node->next = L->head
- * Set the L->head = n
- */
+ * Set the L->head = n */
 void add_begin(linked_list *L, node *n)
 {
     n->next = L->head;
     L->head = n;
 }
 
-/**
- * Function add the node at the end of the linked list
- */
+/* Function add the node at the end of the linked list */
 void add_end(linked_list *L, node *n)
 {
     // Traverset through the linked list, then set last_node->next to n
@@ -90,22 +76,18 @@ void add_end(linked_list *L, node *n)
     temp->next = n;
 }
 
-/**
- * Function add the node after any node
+/* Function add the node after any node
  * node n is the node to be added
- * node a is the node before n
- */
+ * node a is the node before n */
 void add_after_node(node *n, node *a)
 {
     n->next = a->next;
     a->next = n;
 }
 
-/**
- * Function delete any node in the linked list
+/* Function delete any node in the linked list
  * Case 1: at the begin of the linked list
- * Case 2: at the end of the linked list
- */
+ * Case 2: at the end of the linked list */
 void delete_node(linked_list *L, node *d)
 {
     // Node temp for traversal

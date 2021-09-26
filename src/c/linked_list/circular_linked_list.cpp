@@ -6,23 +6,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// Define a node
+/* Define a node */
 typedef struct node
 {
     int data;
     struct node *next;
 } node;
 
-// Define the circular list and keep track of the last node
+/* Define the circular list and keep track of the last node */
 typedef struct circular_list
 {
     struct node *last;
 } circular_list;
 
-/**
- * Function creates a new node dynamically on the heap.
- * This process is the same for all type of linked list
- */
+/* Function creates a new node dynamically on the heap.
+ * This process is the same for all type of linked list */
 node *create_node(int data)
 {
     node *n = (node *)malloc(sizeof(node));
@@ -32,9 +30,7 @@ node *create_node(int data)
     return n;
 }
 
-/**
- * Function creates a circular list dynamically on the heap
- */
+/* Function creates a circular list dynamically on the heap */
 circular_list *create_circular_list(int key)
 {
     // Create a single node circular list
@@ -47,18 +43,14 @@ circular_list *create_circular_list(int key)
     return L;
 }
 
-/**
- * Function adds a node n after a node a
- */
+/* Function adds a node n after a node a */
 void insert_after(node *n, node *a)
 {
     n->next = a->next;
     a->next = n;
 }
 
-/**
- * Function adds a node at the end of the circular linked list
- */
+/* Function adds a node at the end of the circular linked list */
 void insert_at_last(circular_list *L, node *a)
 {
     a->next = L->last->next;
@@ -66,9 +58,7 @@ void insert_at_last(circular_list *L, node *a)
     L->last = a; // set the last node as a
 }
 
-/**
- * Function deletes the node in a list
- */
+/* Function deletes the node in a list */
 void delete_node(circular_list *L, node *a)
 {
     // Traverst to that node in the list
@@ -102,9 +92,7 @@ void delete_node(circular_list *L, node *a)
     free(a);
 }
 
-/**
- * Function traverses and print out all the values in the circular linked list
- */
+/* Function traverses and print out all the values in the circular linked list */
 void traverse(circular_list *L)
 {
     node *temp = L->last;       // temporary node for traversal

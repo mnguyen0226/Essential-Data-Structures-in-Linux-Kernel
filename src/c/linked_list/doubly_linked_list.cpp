@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* Define a node */
 typedef struct node
 {
     int data;
@@ -10,14 +11,13 @@ typedef struct node
     struct node *prev;
 } node;
 
+/* Define a linked list */
 typedef struct linked_list
 {
     struct node *head;
 } linked_list;
 
-/**
- * Function make new node with initial data
- */
+/* Function make new node with initial data */
 node *create_node(int data)
 {
     node *z;
@@ -27,9 +27,7 @@ node *create_node(int data)
     z->prev = NULL;
 }
 
-/**
- * Function make ne linked list
- */
+/* Function make ne linked list */
 linked_list *create_linked_list(int data)
 {
     node *a;
@@ -39,9 +37,7 @@ linked_list *create_linked_list(int data)
     return L;
 }
 
-/**
- * Function traverse through the linked list and print out all data of the linked list
- */
+/* Function traverse through the linked list and print out all data of the linked list */
 void traverse(linked_list *L)
 {
     // Set temp node for traversal
@@ -55,9 +51,7 @@ void traverse(linked_list *L)
     printf("\n");
 }
 
-/**
- * Insert new node to the front of the linked list
- */
+/* Insert new node to the front of the linked list */
 void add_at_front(linked_list *L, node *n)
 {
     // Set connection
@@ -68,9 +62,7 @@ void add_at_front(linked_list *L, node *n)
     L->head = n;
 }
 
-/**
- * Insert new node to the end of the linked list
- */
+/* Insert new node to the end of the linked list */
 void add_at_end(linked_list *L, node *n)
 {
     // Traverse till the end of the linked list
@@ -85,11 +77,9 @@ void add_at_end(linked_list *L, node *n)
     n->prev = temp;
 }
 
-/**
- * Insert a new node after any node
+/* Insert a new node after any node
  * Node n = node that we want to add
- * Node a = node that already in the linked list
- */
+ * Node a = node that already in the linked list */
 void add_after_node(node *n, node *a)
 {
     // Traverse till the current node is a
@@ -99,11 +89,9 @@ void add_after_node(node *n, node *a)
     n->prev = a;
 }
 
-/**
- * Delete a Node
+/* Delete a Node
  * First check if it is a head node or not by prev pointer of the node is null
- * If not the head node then point the next pointer of the node previous to a to the next of a
- */
+ * If not the head node then point the next pointer of the node previous to a to the next of a */
 void delete_node(linked_list *L, node *a)
 {
     // If the node to be deleted is not a head node
