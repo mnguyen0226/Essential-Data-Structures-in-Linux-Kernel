@@ -1,6 +1,9 @@
 // Put comments and explain everything
 
 # Linked List Implementation in C
+
+
+# Linked List Implementation in Linux Kernel
 ```
 /* Initialize the head of the list */
 static LIST_HEAD(mylist);
@@ -64,6 +67,3 @@ static void test_linked_list(struct seq_file *sf)
 	seq_printf(sf, "\n");
 }
 ```
-
-
-# Linked List Implementation in Linux Kernel
