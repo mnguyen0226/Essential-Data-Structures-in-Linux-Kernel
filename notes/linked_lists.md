@@ -1,3 +1,5 @@
+// Put comments and explain everything
+
 # Linked List Implementation in C
 ```
 /* Initialize the head of the list */
