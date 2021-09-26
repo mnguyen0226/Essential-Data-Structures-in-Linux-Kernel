@@ -1,5 +1,5 @@
 /**
- * Project 2 - LKP: Important Data Structures in Linux Kernel Programming
+ * LKP: Important Data Structures in Linux Kernel Programming
  * - Linked List
  * - Hash Table
  * - Red Black Tree
@@ -24,7 +24,7 @@ static char *int_str;
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Minh T. Nguyen");
-MODULE_DESCRIPTION("LKP Project 2");
+MODULE_DESCRIPTION("LKP Data Structures in LKP");
 
 /* Module take in values int_str from the command line and pass to this module */
 module_param(int_str, charp, S_IRUSR | S_IRGRP | S_IROTH);

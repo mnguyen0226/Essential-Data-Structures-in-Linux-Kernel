@@ -1,7 +1,7 @@
 #  Initialize the MODULE as the ex3.c file. We can think of this as macro in C as it is useful to save time
 #  and allow to change the value of MODULE quickly in one line.
 #  ...
-MODULE	 = proj2
+MODULE	 = linux_ds
 
 #  Loadable module goals. (obj-m) specifies object files which are built as loadable kernel modules.
 # The module is built from one source since the kbuild makefile adds the compiled output file ex3.o
