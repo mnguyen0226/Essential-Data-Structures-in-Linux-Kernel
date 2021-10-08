@@ -1,3 +1,4 @@
+```
 DEFINE_XARRAY(xarray);
 
 /* Store temp for the X Array */
@@ -56,3 +57,4 @@ static void test_xarray(struct seq_file *sf)
 	}
 	seq_printf(sf, "\n");
 }
+```

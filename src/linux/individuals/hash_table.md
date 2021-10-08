@@ -1,3 +1,4 @@
+```
 /* Initialize the hash table with size of 10 */
 static DEFINE_HASHTABLE(table, 10);
 
@@ -73,3 +74,4 @@ static void test_hash_table(struct seq_file *sf)
 	}
 	seq_printf(sf, "\n");
 }
+```

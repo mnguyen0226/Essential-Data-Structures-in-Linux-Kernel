@@ -1,3 +1,5 @@
+```
+
 /* Initialize the rb tree */
 struct rb_tree
 {
@@ -84,3 +86,4 @@ static void test_rb_tree(struct seq_file *sf)
 	}
 	seq_printf(sf, "\n");
 }
+```
