@@ -1,3 +1,4 @@
+```
 /* Initialize the radix tree */
 RADIX_TREE(radtree, GFP_KERNEL);
 
@@ -65,3 +66,4 @@ static void test_radix_tree(struct seq_file *sf)
 	}
 	seq_printf(sf, "\n");
 }
+```
