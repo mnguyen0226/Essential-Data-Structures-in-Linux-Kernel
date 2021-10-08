@@ -1,3 +1,5 @@
+```
+
 /* Initialize the head of the list */
 static LIST_HEAD(mylist);
 
@@ -40,7 +42,7 @@ static void destroy_linked_list_and_free(void)
 	}
 }
 
-/* Test function for linked list implementation 
+/* Test function for linked list implementation
  * by iterate through all elements in the stored linked-list "mylist" and print out all values order in both dmesg and /proc
  */
 static void test_linked_list(struct seq_file *sf)
@@ -49,13 +51,15 @@ static void test_linked_list(struct seq_file *sf)
 
 	printk(KERN_INFO "Linked list: ");
 	seq_printf(sf, "Linked list: ");
-	
+
 	// list_for_each_entry() is a function in the linked-list Linux API
 	list_for_each_entry(temp, &mylist, next)
 	{
 		printk(KERN_CONT " %d, ", temp->val);
 		seq_printf(sf, "%d, ", temp->val);
 	}
-	
+
 	seq_printf(sf, "\n");
 }
+
+```
