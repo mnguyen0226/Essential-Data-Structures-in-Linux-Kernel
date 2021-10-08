@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Constructor for table size, initialize a hash table
+/* Constructor for table size, initialize a hash table */
 hash_obj::hash_obj()
 {
     // Fill out the table size
@@ -19,6 +19,7 @@ hash_obj::hash_obj()
     }
 }
 
+/* Function definition of adding item to the hash table */
 void hash_obj::add_item(string name, string drink)
 {
     int index = hash_func(name); // index in the hash table
@@ -48,6 +49,7 @@ void hash_obj::add_item(string name, string drink)
     }
 }
 
+/* Function counts nuimber of item in each index "bucket" */
 int hash_obj::number_of_item_in_index(int index)
 {
     int count = 0;
@@ -70,7 +72,7 @@ int hash_obj::number_of_item_in_index(int index)
     }
 }
 
-// Traverse through the table and print out everything
+/* Function traverses through the table and print out everything */
 void hash_obj::print_table()
 {
     int number;
@@ -86,6 +88,7 @@ void hash_obj::print_table()
     }
 }
 
+/* Function prints out all the items in the index "bucket" */
 void hash_obj::print_items_in_index(int index)
 {
     item *ptr = hash_table[index];
@@ -107,6 +110,7 @@ void hash_obj::print_items_in_index(int index)
     }
 }
 
+/* Function finds the drink based on the name of the user */
 void hash_obj::find_drink(string name)
 {
     // find the bucket
@@ -204,7 +208,7 @@ void hash_obj::remove_item(string name)
     }
 }
 
-// Hash Function convert a string to a position in the hash table array
+/* Hash Function convert a string to a position in the hash table array */
 int hash_obj::hash_func(string key)
 {
     int hash_value = 0;
