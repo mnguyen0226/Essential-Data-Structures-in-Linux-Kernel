@@ -15,14 +15,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Binary marks red or black of each node
+/* Binary marks red or black of each node. */
 enum COLOR
 {
     Red,
     Black
 };
 
-// Create a node data type.
+/* Create a node data type. */
 typedef struct tree_node
 {
     int data;
@@ -32,14 +32,14 @@ typedef struct tree_node
     enum COLOR color;
 } tree_node;
 
-// Create a rb-tree datatype
+/* Create a rb-tree datatype. */
 typedef struct red_black_tree
 {
     tree_node *root;
     tree_node *NIL;
 } rb_tree;
 
-// Function creates a new tree node with data
+/* Function creates a new tree node with data. */
 tree_node *new_tree_node(int data)
 {
     tree_node *n = (tree_node *)malloc(sizeof(tree_node));
@@ -52,7 +52,7 @@ tree_node *new_tree_node(int data)
     return n;
 }
 
-// Function creates a new rb tree
+/* Function creates a new rb tree. */
 rb_tree *new_rb_tree()
 {
     rb_tree *t = (rb_tree *)malloc(sizeof(rb_tree));
@@ -68,7 +68,7 @@ rb_tree *new_rb_tree()
     return t;
 }
 
-// Function rotate the tree to the left for self-balance
+/* Function rotates the tree to the left for self-balance. */
 void left_rotate(red_black_tree *t, tree_node *x)
 {
     tree_node *y = x->right;
@@ -94,7 +94,7 @@ void left_rotate(red_black_tree *t, tree_node *x)
     x->parent = y;
 }
 
-// Function rotate the tree to the right for self-balance
+/* Function rotates the tree to the right for self-balance. */
 void right_rotate(red_black_tree *t, tree_node *x)
 {
     tree_node *y = x->left;
@@ -120,7 +120,7 @@ void right_rotate(red_black_tree *t, tree_node *x)
     x->parent = y;
 }
 
-// Function insert the new node to tree with rotation.
+/* Function inserts the new node to tree with rotation. */
 void insertion_fixup(red_black_tree *t, tree_node *z)
 {
     while (z->parent->color == Red)
@@ -177,10 +177,10 @@ void insertion_fixup(red_black_tree *t, tree_node *z)
     t->root->color = Black;
 }
 
-// Final insert function of fix-up and non-fix-up cases.
+/* Final inserts function of fix-up and non-fix-up cases. */
 void insert_node(red_black_tree *t, tree_node *z)
 {
-    tree_node *y = t->NIL; //variable for the parent of the added node
+    tree_node *y = t->NIL; // variable for the parent of the added node
     tree_node *temp = t->root;
 
     while (temp != t->NIL)
@@ -194,10 +194,10 @@ void insert_node(red_black_tree *t, tree_node *z)
     z->parent = y;
 
     if (y == t->NIL)
-    { //newly added node is root
+    { // newly added node is root
         t->root = z;
     }
-    else if (z->data < y->data) //data of child is less than its parent, left child
+    else if (z->data < y->data) // data of child is less than its parent, left child
         y->left = z;
     else
         y->right = z;
@@ -208,7 +208,7 @@ void insert_node(red_black_tree *t, tree_node *z)
     insertion_fixup(t, z);
 }
 
-// Helper Function transplants for deletion
+/* Helper Function transplants for deletion */
 void rb_transplant(red_black_tree *t, tree_node *u, tree_node *v)
 {
     if (u->parent == t->NIL)
@@ -220,7 +220,7 @@ void rb_transplant(red_black_tree *t, tree_node *u, tree_node *v)
     v->parent = u->parent;
 }
 
-// Function find the smallest element in the BST
+/* Function finds the smallest element in the BST. */
 tree_node *minimum(red_black_tree *t, tree_node *x)
 {
     while (x->left != t->NIL)
@@ -228,7 +228,7 @@ tree_node *minimum(red_black_tree *t, tree_node *x)
     return x;
 }
 
-// Function deletes the new node from tree with rotation.
+/* Function deletes the new node from tree with rotation. */
 void rb_delete_fixup(red_black_tree *t, tree_node *x)
 {
     while (x != t->root && x->color == Black)
@@ -299,7 +299,7 @@ void rb_delete_fixup(red_black_tree *t, tree_node *x)
     x->color = Black;
 }
 
-// Final delete function of fix-up and non-fix-up cases.
+/* Final deletes function of fix-up and non-fix-up cases. */
 void rb_delete(red_black_tree *t, tree_node *z)
 {
     tree_node *y = z;
@@ -339,7 +339,7 @@ void rb_delete(red_black_tree *t, tree_node *z)
         rb_delete_fixup(t, x);
 }
 
-// Function traverse all the node and print out all the node in order
+/* Function traverses all the node and print out all the node in order. */
 void traversal_inorder(red_black_tree *t, tree_node *n)
 {
     if (n != t->NIL)
