@@ -1,5 +1,4 @@
 ```
-
 /* Initialize the rb tree */
 struct rb_tree
 {
