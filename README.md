@@ -3,7 +3,7 @@ Linux Kernel Programming Mini Project
 
 ![alt text](https://github.com/mnguyen0226/essential_data_structures_for_linux_kernel/blob/main/imgs/LKP.png)
 
-## Linux Kernel Proc System with all five data 
+## Linux Kernel Proc System with All Five Data Structures
 - [Linux Kernel Implementation](https://github.com/mnguyen0226/essential_data_structures_for_linux_kernel/blob/main/src/linux/linux_ds.c)
 - How to run:
     - Run "make" command.
